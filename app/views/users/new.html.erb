@@ -1,0 +1,18 @@
+<% flash[:errors].try(:each) do |error| %>
+	<%= msg %>
+<% end %>
+
+<h3>Create new user</h3>
+<form action="<%= new_user_url %>" method="post">
+
+	<label for="username">Username</label>
+	<input type="text" id="username" name="user[username]">
+	<br />
+
+	<label for="password">Password</label>
+	<input type="password" id="password" name="user[password]">
+	<br />
+
+	<input type="submit" value="Create user">
+
+</form>

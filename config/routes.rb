@@ -1,10 +1,12 @@
 Contacts::Application.routes.draw do
 
-  resources :users, :only => [:create, :destroy] do
+  resources :users, :only => [:create, :destroy, :new] do
     resources :contacts, :only => [:index, :create]
   end
 
   resources :contacts, :except => [:index, :create]
+
+  resource :session, :only => [:create, :new, :destroy]
 end
 
 
